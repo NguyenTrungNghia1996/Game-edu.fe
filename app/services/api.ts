@@ -1,4 +1,5 @@
 import type { AuthResponse } from '~/types/api'
+import { getPublicRuntimeConfig } from './runtimeConfig'
 import { appStorage, STORAGE_KEYS } from './storage'
 
 export class ApiError extends Error {
@@ -24,8 +25,7 @@ interface RequestOptions extends Omit<RequestInit, 'body'> {
 let refreshPromise: Promise<AuthResponse | null> | null = null
 
 function getApiBaseUrl(): string {
-  const config = useRuntimeConfig()
-  return (config.public.apiBaseUrl as string).replace(/\/+$/, '')
+  return getPublicRuntimeConfig().apiBaseUrl
 }
 
 async function tryRefreshToken(): Promise<AuthResponse | null> {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { ApiError } from '~/services/api'
+import { getPublicRuntimeConfig } from '~/services/runtimeConfig'
 import { useAuthStore } from '~/stores/auth'
 import { useAudioStore } from '~/stores/audio'
 import { useGameStore } from '~/stores/game'
@@ -60,8 +61,7 @@ async function handleCreateProfile() {
   errorMessage.value = ''
 
   try {
-    const config = useRuntimeConfig()
-    const cdn = (config.public.assetCdnUrl as string).replace(/\/+$/, '')
+    const cdn = getPublicRuntimeConfig().assetCdnUrl
     await authStore.createProfile({
       nickname,
       avatar_url: `${cdn}/avatars/${selectedAvatar.value}.webp`,

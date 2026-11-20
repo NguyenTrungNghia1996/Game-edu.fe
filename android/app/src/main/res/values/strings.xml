@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rừng Chữ Cái</string>
+    <string name="title_activity_main">Rừng Chữ Cái</string>
+    <string name="package_name">vn.yourdomain.rungchucai</string>
+    <string name="custom_url_scheme">vn.yourdomain.rungchucai</string>
+</resources>

@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #__nuxt {
+    @apply w-full h-full m-0 p-0 bg-forest-900 text-slate-900 font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+
+  button {
+    touch-action: manipulation;
+  }
+}
+
+@layer components {
+  .btn-kid {
+    @apply inline-flex items-center justify-center gap-2 min-h-[56px] min-w-[56px] px-6 py-3 rounded-2xl font-extrabold text-lg transition-all duration-150 select-none active:translate-y-1 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-kid-primary {
+    @apply btn-kid bg-gradient-to-b from-amber-300 to-amber-500 text-amber-950 border-b-4 border-amber-700 shadow-lg hover:brightness-105 active:border-b-0;
+  }
+
+  .btn-kid-green {
+    @apply btn-kid bg-gradient-to-b from-emerald-400 to-emerald-600 text-white border-b-4 border-emerald-800 shadow-lg hover:brightness-105 active:border-b-0;
+  }
+
+  .btn-kid-blue {
+    @apply btn-kid bg-gradient-to-b from-sky-400 to-sky-600 text-white border-b-4 border-sky-800 shadow-lg hover:brightness-105 active:border-b-0;
+  }
+
+  .btn-kid-wood {
+    @apply btn-kid bg-gradient-to-b from-amber-100 to-amber-200 text-amber-950 border-2 border-amber-400 border-b-4 border-b-amber-600 shadow-md hover:brightness-105 active:border-b-2;
+  }
+
+  .card-wood {
+    @apply bg-amber-50/95 border-4 border-amber-500 rounded-3xl shadow-2xl;
+  }
+
+  .safe-area-hud {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+
+  .safe-area-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}

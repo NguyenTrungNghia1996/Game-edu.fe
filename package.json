@@ -1,0 +1,36 @@
+{
+  "name": "edu-game-fe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "cap:sync": "yarn generate && npx cap sync"
+  },
+  "dependencies": {
+    "@capacitor/app": "^6.0.2",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/preferences": "^6.0.3",
+    "@capacitor/screen-orientation": "^6.0.3",
+    "@capacitor/status-bar": "^6.0.2",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@pinia/nuxt": "^0.11.1",
+    "mitt": "^3.0.1",
+    "nuxt": "^4.0.0",
+    "phaser": "^3.88.2",
+    "pinia": "^3.0.2",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/ios": "^6.2.0",
+    "typescript": "^5.8.2",
+    "vue-tsc": "^2.2.8"
+  }
+}

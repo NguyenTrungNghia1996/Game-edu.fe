@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { gameEventBus } from '~/game/eventBus'
 import type { WorldMapSceneData } from '~/game/types'
 import { ApiError } from '~/services/api'
+import { getPublicRuntimeConfig } from '~/services/runtimeConfig'
 import { useAuthStore } from '~/stores/auth'
 import { useAudioStore } from '~/stores/audio'
 import { useGameStore } from '~/stores/game'
@@ -14,13 +15,12 @@ definePageMeta({
 })
 
 const route = useRoute()
-const config = useRuntimeConfig()
 const authStore = useAuthStore()
 const audioStore = useAudioStore()
 const gameStore = useGameStore()
 
 const worldId = computed(() => String(route.params.worldId || ''))
-const assetCdnUrl = computed(() => (config.public.assetCdnUrl as string).replace(/\/+$/, ''))
+const assetCdnUrl = computed(() => getPublicRuntimeConfig().assetCdnUrl)
 
 const phaserReady = ref(false)
 const inStage = ref(false)

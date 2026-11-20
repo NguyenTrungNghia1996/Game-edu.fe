@@ -47,6 +47,11 @@ export default defineNuxtConfig({
           href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Quicksand:wght@600;700&display=swap',
         },
       ],
+      script: [
+        {
+          src: '/runtime-config.js',
+        },
+      ],
     },
   },
 
